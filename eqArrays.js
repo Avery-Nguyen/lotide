@@ -18,8 +18,6 @@ const eqArrays = function(arr1, arr2){
         }
       })
     });
-  }else {
-    return result = false;
   }
   return result;
 }
