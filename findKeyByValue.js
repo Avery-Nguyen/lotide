@@ -7,16 +7,12 @@ const assertEqual = function(actual, expected) {
 };
 
 const findKeyByValue = function(object, property) {
-  let result = "";
   const arrKeys = Object.keys(object);
   for (const key of arrKeys) {
     if (object[key] === property) {
-      result = key;
-    } else {
-      result = undefined;
-    }
+      return key;
+    } 
   }
-  return result;
 };
 
 
