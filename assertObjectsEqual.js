@@ -1,36 +1,5 @@
-const eqArrays = function(arr1, arr2) {
-  let result = true;
-  if (result) {
-    arr1.forEach(element => {
-      arr2.forEach(element2 => {
-        if (element === element2) {
-          result = true;
-        } else {
-          return result = false;
-        }
-      });
-    });
-  }
-  return result;
-};
-
-const eqObjects = function(object1, object2) {
-  let result = false;
-  const arr1 = Object.keys(object1);
-  if (Object.keys(object1).length === Object.keys(object2).length) {
-    for (const key of arr1) {
-      if (Array.isArray(object1[key])) {
-        result = eqArrays(object1[key], object2[key]);
-      } else if (object1[key] === object2[key]) {
-        result = true;
-      } else {
-        return false;
-      }
-    }
-  }
-  return result;
-};
-
+const eqArrays = require('./eqArrays')
+const eqObjects = require('./eqObjects')
 const assertObjectsEqual = function(actual, expected) {
   const inspect = require('util').inspect;
   if (!eqObjects(actual, expected)) {
