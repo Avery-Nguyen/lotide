@@ -14,3 +14,6 @@ const eqArrays = function(arr1, arr2) {
   return result;
 };
 module.exports = eqArrays;
+
+//test code
+// console.log(eqArrays([1, 2, 3], [1, 2, 3])); //true
