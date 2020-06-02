@@ -1,16 +1,16 @@
+let newArray = [];
 const flatten = function(array) {
-  let newArr = [];
+  if (array.length === 0) {
+    return [];
+  }
   for (let i = 0; i < array.length; i++) {
-    let type = Array.isArray(array[i]);
-    if (type) {
-      for (let j = 0; j < array[i].length; j++) {
-        newArr.push(array[i][j]);
-      }
+    if (array[i].constructor === Array) {
+      flatten(array[i]);
     } else {
-      newArr.push(array[i]);
+      newArray.push(array[i]);
     }
   }
-  return newArr;
+  return newArray;
 };
 
 module.exports = flatten;
