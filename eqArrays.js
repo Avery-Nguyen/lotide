@@ -1,18 +1,15 @@
 const eqArrays = function(arr1, arr2) {
-  let result = true;
-  if (result) {
-    arr1.forEach(element => {
-      arr2.forEach(element2 => {
-        if (element === element2) {
-          result = true;
-        } else {
-          return result = false;
-        }
-      });
-    });
+  if (arr1.length !== arr2.length) {
+    return false;
   }
-  return result;
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr1[i] !== arr2[i]) {
+      return false;
+    }
+  }
+  return true;
 };
+
 module.exports = eqArrays;
 
 //test code
